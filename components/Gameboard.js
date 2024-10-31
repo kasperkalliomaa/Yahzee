@@ -75,8 +75,8 @@ export default Gameboard = ({navigation, route}) => {
         const playerPoints = {
             key: newKey,
             name: playerName,
-            date: date.toLocaleDateString, // haetaan päivämäärä
-            time: date.toLocaleTimeString, // haetaan aika
+            date: date.toLocaleDateString(), // haetaan päivämäärä
+            time: date.toLocaleTimeString(), // haetaan aika
             score: points // Pistemäärä
         }
         try{

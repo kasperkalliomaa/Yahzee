@@ -57,7 +57,7 @@ export default Scoreboard = ({navigation}) => {
                         data={scores}
                         keyExtractor={(item, index) => index.toString()}
                         renderItem={({ item }) => (
-                            <View> 
+                            <View style={styles.container}> 
                                 <Text>{item.name}</Text>
                                 <Text>Score: {item.score} points</Text>
                                 <Text>Date: {item.date}</Text>
