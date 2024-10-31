@@ -44,7 +44,8 @@ export default Gameboard = ({navigation, route}) => {
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             getScoreboardData();
-        })
+        });
+        return unsubscribe;
     }, [navigation]);
 
     const getScoreboardData = async() => {
@@ -188,7 +189,7 @@ export default Gameboard = ({navigation, route}) => {
     }
 
     function getDiceColor(i) {
-        return selectedDices[i] ? 'black' : 'steelblue';
+        return selectedDices[i] ? 'red' : '#8b16da';
     }
 
 

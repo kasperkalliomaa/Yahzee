@@ -50,11 +50,12 @@ export default Home = ({navigation}) => {
                         your points from {MIN_SPOT} to {MAX_SPOT}.
                         Game ends when all points have been selected.
                         The order for selecting those is free.
+                        </Text>
+                        <Text multiline='true' style={styles.gameinfo}>
                         GOAL: To get points as much as possible.
                         {BONUS_POINTS_LIMIT} points is the limit of
                         getting bonus which gives you {BONUS_POINTS}
                         points more.
-
                         </Text>
                         <Text style={styles.gl}>Good luck, {playerName}</Text>
                         <Pressable onPress={() => navigation.navigate('Gameboard', {player: playerName})} style={styles.button}>

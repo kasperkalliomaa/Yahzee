@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react';
-import { Text, View, Button, FlatList } from 'react-native';
+import { Text, View, Button, FlatList, ScrollView, Pressable } from 'react-native';
 import Header from './Header';
 import Footer from './Footer';
 import { SCOREBOARD_KEY } from '../constants/Game';
-import styles from '../style/style';
+import styles from '../style/SBstyle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import style from '../style/style';
 
 export default Scoreboard = ({navigation}) => {
     
@@ -22,9 +23,8 @@ export default Scoreboard = ({navigation}) => {
             const jsonValue = await AsyncStorage.getItem(SCOREBOARD_KEY);
             if(jsonValue !== null){
                 const tmpScores = JSON.parse(jsonValue);
+                tmpScores.sort((a, b) => b.score - a.score);
                 setScores(tmpScores);
-                // Opettajan versiossa tässä välissä tehdään lajittelu
-                // Laskevassa järjestyksessä (KS. HARJOITUSTYÖN TEHT ANTO)
                 console.log('SCOREBOARD: read succesful');
                 console.log('SCOREBOARD: NBR of scores ' + tmpScores.length);
                 
@@ -49,9 +49,11 @@ export default Scoreboard = ({navigation}) => {
     return(
         <>
             <Header />
-            <View>
-                <Text>Scoreboard</Text>
+            <Button title='Clear Scoreboard' onPress={clearScoreboard}/>
 
+            <View style={styles.container}>
+                <Text style={styles.text}>Scoreboard</Text>
+ 
                 {scores.length > 0 ? (
                     <FlatList
                         data={scores}
@@ -59,19 +61,19 @@ export default Scoreboard = ({navigation}) => {
                         renderItem={({ item }) => (
                             <View style={styles.container}> 
                                 <Text>{item.name}</Text>
-                                <Text>Score: {item.score} points</Text>
-                                <Text>Date: {item.date}</Text>
-                                <Text>Time: {item.time}</Text>
+                                <Text style={styles.scoreText}>Score: {item.score} points</Text>
+                                <Text style={styles.date}>Date: {item.date}</Text>
+                                <Text style={styles.time}>Time: {item.time}</Text>
                             </View>
                         )}
                     />
                 ) : (
-                    <Text>No scores yet...</Text>
+                    <Text style={styles.scoreboardHeader}>No scores yet...</Text>
                 )}
 
-                <Button title="Clear Scoreboard" onPress={clearScoreboard} />
 
             </View>
+          
             <Footer />
         </>
     )

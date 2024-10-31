@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        flex: 0.8,
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#bfdefa',
+        backgroundColor: '#f0f1f1',
         padding: 10,
     },
     diceContainer: {
@@ -33,8 +33,8 @@ export default StyleSheet.create({
         marginBottom: 15,
     },
     button: {
-        backgroundColor: '#ffffff',
-        padding:10,
+        backgroundColor: '#a7f0ed',
+        padding:20,
         borderWidth:1,
         borderRadius:5,
         margin:10,
@@ -50,6 +50,7 @@ export default StyleSheet.create({
         borderWidth:1,
         borderRadius:5,
         margin:10,
+        backgroundColor:'#c4b9f3'
 
     },
     newGame:{
@@ -58,6 +59,7 @@ export default StyleSheet.create({
         borderWidth:1,
         borderRadius:5,
         margin:10,
+        backgroundColor:'#c4b9f3'
 
     }
 });
