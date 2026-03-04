@@ -11,7 +11,7 @@ import { NBR_OF_DICES,
         BONUS_POINTS_LIMIT } from '../constants/Game';
 import styles from '../style/style';
 
-export default Home = ({navigation}) => {
+const Home = ({navigation}) => {
 
     const [playerName, setPlayerName] = useState('');
     const [hasPlayerName, setHasPlayerName] = useState(false);
@@ -68,3 +68,5 @@ export default Home = ({navigation}) => {
         </>
     )
 }
+
+export default Home;

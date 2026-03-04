@@ -7,7 +7,7 @@ import styles from '../style/SBstyle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import style from '../style/style';
 
-export default Scoreboard = ({navigation}) => {
+const Scoreboard = ({navigation}) => {
     
     const [scores, setScores] = useState([]);
 
@@ -78,3 +78,5 @@ export default Scoreboard = ({navigation}) => {
         </>
     )
 }
+
+export default Scoreboard;

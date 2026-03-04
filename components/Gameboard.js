@@ -18,7 +18,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 let board = [];
 
 
-export default Gameboard = ({navigation, route}) => {
+const Gameboard = ({navigation, route}) => {
     
 
     const [nbrOfThrowsLeft, setNbrOfThrowsLeft] = useState(NBR_OF_THROWS);
@@ -286,3 +286,5 @@ export default Gameboard = ({navigation, route}) => {
         </>
     )
 }
+
+export default Gameboard
