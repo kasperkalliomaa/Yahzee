@@ -4,6 +4,9 @@
 - Tulokset tallennetaan paikallisesti ja näytetään Scoreboardissa.
 - Toteuttettu kouluprojektina.
 
+## Demo
+ - https://youtube.com/shorts/1j0RiDxNj74
+
 ## Teknologiat
 - Expo + React Native
 - React Navigation (Bottom Tabs)
